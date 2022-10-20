@@ -1,0 +1,319 @@
+import time
+import smtplib
+import requests
+from bs4 import BeautifulSoup
+from bs4 import SoupStrainer
+from datetime import datetime
+import os
+from os.path import exists
+import secrets
+from email.message import EmailMessage
+
+
+TheConfigurationFile = 'F:\\Users\\dudeo\\AppData\\Local\\Programs\\Python\\Python39\\dist\\Config.txt'
+
+logFile = 'NISA.txt'
+configTXT = 'F:\\Users\\dudeo\\AppData\\Local\\Programs\\Python\\Python39\\dist\\Config.txt'
+
+def better_sleep(time2wait):
+    start = time.time()
+    while((time.time()-start)<time2wait-.00042):
+        time.sleep(1)
+#Get email and password
+def login_info():
+    configFile = open(TheConfigurationFile, 'r')
+    config = str(configFile.read())
+    email = config.split('Email: ')
+    email = email[1].split('Password: ')
+    password = str(email[1].strip())
+    email = str(email[0].strip()).strip()
+    try:
+        server = config.split('Server: ')[1]
+        server = str(server.split('Email: ')[0].strip())
+    except:
+        print('its the server')
+    try:
+        port = config.split('Port: ')[1]
+        port = port.split('Server: ')[0].strip()
+        port = int(str(port))
+    except:
+        print('port also fucked up')
+    try:
+        app = config.split('App Pass: ')[1]
+        app = app.split('Port: ')[0].strip()
+        app = str(app)
+    except:
+        print('port also fucked up')
+    configFile.close()
+    return email, password, server, port, app
+
+
+#email function
+def email(sites):
+    myEmail, myPass, theServer, thePort, theAppPassword = login_info()
+    configFile = open(configTXT, 'r')
+    raw_emails = configFile.readlines()
+    configFile.close()
+    notDone = 1
+    x = 0
+    #Get the list of emails for pokemon
+##    while notDone > 0:
+##        bad = 0
+##        for line in range(0, len(raw_emails)-x, 1):
+##            if ((str(raw_emails[line]).__contains__('@')) and ((str(raw_emails[line]).__contains__('.')))):
+##                if (str(raw_emails[line]).__contains__('Email')):
+##                    try:
+##                        raw_emails[line] = raw_emails[line+1]
+##                        raw_emails[line+1] = 0
+##                    except:
+##                        raw_emails[line] = 0
+##                else:                    
+##                    raw_emails[line] = str(raw_emails[line]).strip()
+##            else:
+##                try:
+##                    raw_emails[line] = raw_emails[line+1]
+##                    raw_emails[line+1] = 0
+##                except:
+##                    raw_emails[line] = 0
+##                bad = 1
+##        x=x+1
+##        if bad == 0:
+##            notDone = 0
+##        #print(raw_emails)
+##        
+##    the_emails = []
+##    for i in range(0, len(raw_emails), 1):
+##        if raw_emails[i] != 0:
+##            the_emails.append(raw_emails[i])
+##            print(the_emails[i])
+    #email myself
+    try:
+        server = smtplib.SMTP_SSL(theServer, thePort)
+        server.login(myEmail, theAppPassword)
+        msge = EmailMessage()
+        msge.set_content(sites)
+        server.send_message(msge, from_addr=myEmail, to_addrs=myEmail)
+        server.quit()
+    except:
+        better_sleep(1)
+        logger = open(logFile, 'a')
+        now = datetime.now()
+        dt_string = now.strftime("%m/%d/%Y %I:%M:%S %p")
+        logger.write('\n')
+        logger.write(dt_string + '\n')
+        logger.write(str('Failed to send email to me!'))
+        logger.close()
+        #email the poke peeps
+##    for i in range(0, len(the_emails), 1):
+##        try:
+##            server = smtplib.SMTP_SSL(theServer, thePort)
+##            server.login(myEmail, theAppPassword)
+##            msge = EmailMessage()
+##            msge.set_content(sites)
+##            server.send_message(msge, from_addr=myEmail, to_addrs=str(the_emails[i]))
+##            server.quit()
+##        except:
+##            better_sleep(1)
+##            logger = open(logFile, 'a')
+##            now = datetime.now()
+##            dt_string = now.strftime("%m/%d/%Y %I:%M:%S %p")
+##            logger.write('\n')
+##            logger.write(dt_string + '\n')
+##            logger.write(str('Failed to send email to ' + str(the_emails[i]) + '!'))
+##            logger.close()
+
+def check_if_relavent(separator, have_or_have_not, TheFileOfConfiguration, bs_response):
+    #Check for special temporary key words
+    spot = 0
+    separatorIs = [5, 9]
+    logger = open(TheFileOfConfiguration, 'r')
+    desiredInfoSeparators = separator + '\n'
+    desiredLines = logger.readlines()
+    logger.close()
+    #print(desiredLines)
+    for i in range(10, len(desiredLines)):
+        if desiredLines[i] == desiredInfoSeparators:
+            separatorIs[spot] = i
+            spot = spot + 1
+            if spot == 3:
+                i = 2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2
+    i = 0
+    sendEmail = 0
+    if have_or_have_not == 'have':
+        for i in range(separatorIs[0]+1, separatorIs[1]):
+            #print(i)
+            line_no_space = desiredLines[i].split('\n')[0]
+            line_no_space = line_no_space.strip()
+            if bs_response.__contains__(line_no_space):
+                logger = open(logFile, 'a')
+                now = datetime.now()
+                dt_string = now.strftime("%m/%d/%Y %I:%M:%S %p")
+                logger.write('\n')
+                logger.write(dt_string + '\n')
+                logger.write(str(line_no_space + ' limited edition is up for preorder'))
+                logger.close()
+                print(line_no_space)
+                #print(desiredLines[i])
+                sendEmail = 1
+                i = 2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2 + separatorIs[1]
+    if have_or_have_not == 'have not':
+        for i in range(separatorIs[0]+1, separatorIs[1]):
+            #print(i)
+            line_no_space = desiredLines[i].split('\n')[0]
+            line_no_space = line_no_space.strip()
+            if not (bs_response.__contains__(line_no_space)):
+                #print(desiredLines[i])
+                sendEmail = 1
+                i = 2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2 + separatorIs[1]
+    return sendEmail
+
+def clear_out_log_file(file_that_logs_info, maximum_size_in_bytes, divisor_number):
+    text_file_size = os.path.getsize(file_that_logs_info)
+    if text_file_size > maximum_size_in_bytes:
+        print('too big')
+        print(text_file_size)
+        logger_lines = []
+        #read lines first
+        logger = open(file_that_logs_info, 'r')
+        logger_lines = logger.readlines()
+        logger.close()
+        #write most of the lines
+        logger = open(file_that_logs_info, 'w')
+        for number, line in enumerate(logger_lines):
+            if number > (len(logger_lines)/divisor_number) or number == 0:
+                logger.write(line)
+        logger.close()
+                    
+
+#Checker
+def NISA(counter, past):
+    s = past
+    #s = 9
+    #get the sites from the configuration file
+    the_site = 'https://store.nisamerica.com/preorders?edition=37&product_list_order=release_date&product_list_limit=45'
+    print(the_site)
+    the_short_site = 'store.nisamerica.com/preorders?edition=37&product_list_order=release_date&product_list_limit=45'
+    msg = 'There is a new available limited edition preorder at NISA! Check out ' + the_short_site
+    try:
+        response = requests.get(the_site)
+        site = str(response)
+    except:
+        site = 'Fucked'
+    if site != "Fucked":
+        logger = open(logFile, 'a')
+        now = datetime.now()
+        dt_string = now.strftime("%m/%d/%Y %I:%M:%S %p")
+        logger.write('\n')
+        logger.write(dt_string + '\n')
+        logger.write(str('NISA got response'))
+        logger.close()
+    bs_response = BeautifulSoup(response.text, "lxml")
+    bs_response = bs_response.body.main.find(class_='products wrapper grid products-grid').getText()
+    #print(bs_response)
+    bs_response = str(bs_response)
+    bs_response = bs_response.replace('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n', '')
+    bs_response = bs_response.replace('\n\n\n', '')
+    bs_response = bs_response.replace('\n\n', '')
+    bs_response = bs_response.replace('         ', '')
+    print(bs_response)
+    if bs_response == s:
+        #there was no change to the site
+        s = bs_response
+        sendEmail = 0
+        #sendEmail = 1 # comment out this line
+    else:
+        sep = '`````````````````````````````````````````````````````````````````````````'
+        sendEmail = check_if_relavent(sep, 'have', TheConfigurationFile, bs_response)
+        print('sendEmail = ' + str(sendEmail))
+        s = bs_response
+                    
+        #sendEmail = 1 # comment out this line
+    if counter > 0:
+        if sendEmail == 1:
+            #print('sending email')
+            email(str(msg))
+            logger = open(logFile, 'a')
+            now = datetime.now()
+            dt_string = now.strftime("%m/%d/%Y %I:%M:%S %p")
+            logger.write('\n')
+            logger.write(dt_string + '\n')
+            logger.write('New Limited Edition!\n')
+            logger.close()
+        else:
+            #print('not sending email')
+            logger = open(logFile, 'a')
+            now = datetime.now()
+            dt_string = now.strftime("%m/%d/%Y %I:%M:%S %p")
+            logger.write('\n')
+            logger.write(dt_string + '\n')
+            logger.write('No New Info\n')
+            logger.close()
+    else:
+        logger = open(logFile, 'a')
+        now = datetime.now()
+        dt_string = now.strftime("%m/%d/%Y %I:%M:%S %p")
+        logger.write('\n')
+        logger.write(dt_string + '\n')
+        logger.write('Just started.  Not sending the email. \n')
+        logger.close()
+        pastsoup = s
+    msg = 'Go to: '
+    sendEmail = 0
+    return s
+
+
+def main():
+    #email('This is a test.  Current BDSP events are Shayman.  Connect to Mystery Gift internet.  Starting April 1st to April 30th connect to MG internet and get Darkrai.  I love you a ton and once I finish school I promis Ill have more game time for you <3')
+    z = 0
+    count = 0
+    daycount = count
+    past = 0
+    if(exists(logFile)):
+        pass
+    else:
+        logger = open(logFile, 'w')
+        logger.write('This is the log of stuff:' + '\n')
+        logger.close()
+    while z < 30:
+        # should do the initializing
+        # wont send email.  Just doing set up
+        if count == 0:
+            past_soup = NISA(count,  past)
+        #now the set up is done do the check for real
+        if count > 0:
+            now = datetime.now()
+            today = now.strftime("%S")
+            if today == 'deez nuts':
+                print('there is something really wrong')
+            else:
+                try:
+                    past_soup = NISA(count, past_soup)
+                except:
+                    msg = 'There was a main() error on NISA. Maybe check Nippon Ichi Software America'
+                    email(msg)
+                    logger = open(logFile, 'a')
+                    now = datetime.now()
+                    dt_string = now.strftime("%m/%d/%Y %I:%M:%S %p")
+                    logger.write('\n')
+                    logger.write(dt_string + '\n')
+                    logger.write('There was a main() error. \n' + '\n')
+                    logger.close()
+                past = today
+                daycount = daycount + 1
+        better_sleep(secrets.randbelow(777))
+        clear_out_log_file(logFile, 44444, 4)
+        count = count + 1
+        #print(count)
+
+        better_sleep(666)
+        
+if __name__ == '__main__':
+    main()
+
+
+
+
+
+
+
+
