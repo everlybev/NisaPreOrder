@@ -190,9 +190,9 @@ def NISA(counter, past):
     s = past
     #s = 9
     #get the sites from the configuration file
-    the_site = 'https://store.nisamerica.com/preorders?edition=37&product_list_order=release_date&product_list_limit=45'
+    the_site = 'https://store.nisamerica.com/preorders?product_list_limit=45'
     print(the_site)
-    the_short_site = 'store.nisamerica.com/preorders?edition=37&product_list_order=release_date&product_list_limit=45'
+    the_short_site = 'store.nisamerica.com/preorders?product_list_limit=45'
     msg = 'There is a new available limited edition preorder at NISA! Check out ' + the_short_site
     try:
         response = requests.get(the_site)
