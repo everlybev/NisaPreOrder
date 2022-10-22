@@ -183,6 +183,75 @@ def clear_out_log_file(file_that_logs_info, maximum_size_in_bytes, divisor_numbe
             if number > (len(logger_lines)/divisor_number) or number == 0:
                 logger.write(line)
         logger.close()
+
+def remove_unnecessary_shit(string):
+    for index_of_character_in_string in range(0, len(string)):
+        try:
+            if string[index_of_character_in_string] == '$':
+                characters = str(string[index_of_character_in_string]) + str(string[index_of_character_in_string+1]) + str(string[index_of_character_in_string+2]) + str(string[index_of_character_in_string+3]) + str(string[index_of_character_in_string+4])+str(string[index_of_character_in_string+5])+str(string[index_of_character_in_string+6])
+                print(characters)
+                string = string.replace(characters, '')
+        except:
+            pass
+    string = string.replace('Compare', '')
+    string = string.replace('Add to Cart', '')
+    string = string.replace('Summer', '')
+    string = string.replace('Fall', '')
+    string = string.replace('Spring', '')
+    string = string.replace('January', '')
+    string = string.replace('February', '')
+    string = string.replace('March', '')
+    string = string.replace('April', '')
+    string = string.replace('June', '')
+    string = string.replace('May', '')
+    string = string.replace('July', '')
+    string = string.replace('August', '')
+    string = string.replace('September', '')
+    string = string.replace('October', '')
+    string = string.replace('November', '')
+    string = string.replace('December', '')
+    string = string.replace('Early', '')
+    string = string.replace('Available', '')
+    string = string.replace('Late', '')
+    string = string.replace('USD', '')
+    for i in range(2022, 2097):
+        year = str(i)
+        try:
+            string = string.replace(year, '')
+        except:
+            pass
+    for i in range(32, 1, -1):
+        day = str(i) + '/'
+        day_comma = str(i) + ','
+        try:
+            string = string.replace(day, '')
+        except:
+            pass
+        try:
+            string = string.replace(day_comma, '')
+        except:
+            pass
+    for i in range(13, 1, -1):
+        month = str(i) + '/'
+        month_comma = str(i) + ','
+        try:
+            string = string.replace(month, '')
+        except:
+            pass
+        try:
+            string = string.replace(month_comma, '')
+        except:
+            pass
+    string = string.replace('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n', '')
+    string = string.replace('\n\n\n', '')
+    string = string.replace('\n\n', '')
+    string = string.replace('         ', '')
+    string = string.replace('		', '')
+    string = string.replace('  ', '')
+    string = string.replace('\n\n\n', '')
+    string = string.replace('\n\n', '')
+    string = string.replace('  ', '')
+    return string
                     
 
 #Checker
@@ -209,12 +278,8 @@ def NISA(counter, past):
         logger.close()
     bs_response = BeautifulSoup(response.text, "lxml")
     bs_response = bs_response.body.main.find(class_='products wrapper grid products-grid').getText()
-    #print(bs_response)
     bs_response = str(bs_response)
-    bs_response = bs_response.replace('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n', '')
-    bs_response = bs_response.replace('\n\n\n', '')
-    bs_response = bs_response.replace('\n\n', '')
-    bs_response = bs_response.replace('         ', '')
+    bs_response = remove_unnecessary_shit(bs_response)
     print(bs_response)
     if bs_response == s:
         #there was no change to the site
