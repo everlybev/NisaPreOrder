@@ -189,7 +189,7 @@ def remove_unnecessary_shit(string):
         try:
             if string[index_of_character_in_string] == '$':
                 characters = str(string[index_of_character_in_string]) + str(string[index_of_character_in_string+1]) + str(string[index_of_character_in_string+2]) + str(string[index_of_character_in_string+3]) + str(string[index_of_character_in_string+4])+str(string[index_of_character_in_string+5])+str(string[index_of_character_in_string+6])
-                print(characters)
+                #print(characters)
                 string = string.replace(characters, '')
         except:
             pass
@@ -251,12 +251,21 @@ def remove_unnecessary_shit(string):
     string = string.replace('\n\n\n', '')
     string = string.replace('\n\n', '')
     string = string.replace('  ', '')
+    string = string.replace('\n ', '\n')
+    string = string.replace('\n\n', '\n')
     return string
                     
 
 #Checker
 def NISA(counter, past):
     s = past
+    try:
+        s_array = str(s)
+        s_array = s_array.split('\n')
+        split = 1
+    except:
+        print('can not split')
+        split = 0
     #s = 9
     #get the sites from the configuration file
     the_site = 'https://store.nisamerica.com/preorders?product_list_limit=45'
@@ -280,15 +289,30 @@ def NISA(counter, past):
     bs_response = bs_response.body.main.find(class_='products wrapper grid products-grid').getText()
     bs_response = str(bs_response)
     bs_response = remove_unnecessary_shit(bs_response)
-    print(bs_response)
+    #print(bs_response)
     if bs_response == s:
         #there was no change to the site
+        #print('no change')
         s = bs_response
         sendEmail = 0
         #sendEmail = 1 # comment out this line
     else:
+        #Gotta make sure the order was not shuffled
+        string_with_old_stuff_removed = bs_response
+        if split == 1:
+            for title_index in range(0, len(s_array)):
+                if( (str(s_array[title_index]) == '') or (str(s_array[title_index]) == ' ') or (str(s_array[title_index]) == '  ') ):
+                    pass
+                else:
+                    temp_text = str(s_array[title_index]).replace(' \n', '')
+                    temp_text = str(s_array[title_index]).replace('\n ', '')
+                    if temp_text[len(temp_text)-1] == '\n':
+                        temp_text = temp_text.replace('\n', '')
+                    #print(temp_text)
+                    string_with_old_stuff_removed = string_with_old_stuff_removed.replace(temp_text, '')
         sep = '`````````````````````````````````````````````````````````````````````````'
-        sendEmail = check_if_relavent(sep, 'have', TheConfigurationFile, bs_response)
+        print('stuff:\n' + string_with_old_stuff_removed)
+        sendEmail = check_if_relavent(sep, 'have', TheConfigurationFile, string_with_old_stuff_removed)
         print('sendEmail = ' + str(sendEmail))
         s = bs_response
                     
@@ -365,12 +389,12 @@ def main():
                     logger.close()
                 past = today
                 daycount = daycount + 1
-        better_sleep(secrets.randbelow(777))
+        better_sleep(secrets.randbelow(7))
         clear_out_log_file(logFile, 44444, 4)
         count = count + 1
         #print(count)
 
-        better_sleep(666)
+        better_sleep(6)
         
 if __name__ == '__main__':
     main()

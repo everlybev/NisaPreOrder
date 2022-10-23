@@ -1,576 +1,4 @@
 import time
-10/12/2022 02:00:17 AM
-No new chapters
-
-10/12/2022 02:00:39 AM
-MangaHere got response
-10/12/2022 02:00:39 AM
-No new chapters
-
-10/12/2022 03:00:12 AM
-MangaHere got response
-10/12/2022 03:00:12 AM
-No new chapters
-
-10/12/2022 03:00:18 AM
-MangaHere got response
-10/12/2022 03:00:18 AM
-No new chapters
-
-10/12/2022 07:07:53 AM
-MangaHere got response
-10/12/2022 07:07:53 AM
-Just started.  Not sending email. 
-
-10/12/2022 07:07:54 AM
-MangaHere got response
-10/12/2022 07:07:54 AM
-Just started.  Not sending email. 
-
-10/12/2022 07:08:09 AM
-MangaHere got response
-10/12/2022 07:08:09 AM
-No new chapters
-
-10/12/2022 07:08:17 AM
-MangaHere got response
-10/12/2022 07:08:17 AM
-No new chapters
-
-10/12/2022 08:00:08 AM
-MangaHere got response
-10/12/2022 08:00:08 AM
-No new chapters
-
-10/12/2022 08:00:34 AM
-MangaHere got response
-10/12/2022 08:00:34 AM
-No new chapters
-
-10/12/2022 09:00:04 AM
-MangaHere got response
-10/12/2022 09:00:04 AM
-No new chapters
-
-10/12/2022 09:00:05 AM
-MangaHere got response
-10/12/2022 09:00:05 AM
-No new chapters
-
-10/12/2022 10:00:09 AM
-MangaHere got response
-10/12/2022 10:00:09 AM
-No new chapters
-
-10/12/2022 10:00:42 AM
-MangaHere got response
-10/12/2022 10:00:42 AM
-No new chapters
-
-10/12/2022 11:00:13 AM
-MangaHere got response
-10/12/2022 11:00:13 AM
-No new chapters
-
-10/12/2022 11:00:23 AM
-MangaHere got response
-10/12/2022 11:00:23 AM
-No new chapters
-
-10/12/2022 12:00:40 PM
-MangaHere got response
-10/12/2022 12:00:40 PM
-No new chapters
-
-10/12/2022 12:00:57 PM
-MangaHere got response
-10/12/2022 12:00:57 PM
-No new chapters
-
-10/12/2022 01:00:16 PM
-MangaHere got response
-10/12/2022 01:00:16 PM
-No new chapters
-
-10/12/2022 01:00:25 PM
-MangaHere got response
-10/12/2022 01:00:25 PM
-No new chapters
-
-10/12/2022 02:00:09 PM
-MangaHere got response
-10/12/2022 02:00:09 PM
-No new chapters
-
-10/12/2022 02:00:40 PM
-MangaHere got response
-10/12/2022 02:00:40 PM
-No new chapters
-
-10/12/2022 03:00:05 PM
-MangaHere got response
-10/12/2022 03:00:05 PM
-No new chapters
-
-10/12/2022 03:00:22 PM
-MangaHere got response
-10/12/2022 03:00:22 PM
-No new chapters
-
-10/12/2022 04:00:04 PM
-MangaHere got response
-10/12/2022 04:00:04 PM
-No new chapters
-
-10/12/2022 04:00:21 PM
-MangaHere got response
-10/12/2022 04:00:21 PM
-No new chapters
-
-10/12/2022 05:00:15 PM
-MangaHere got response
-10/12/2022 05:00:15 PM
-No new chapters
-
-10/12/2022 05:00:19 PM
-MangaHere got response
-10/12/2022 05:00:19 PM
-No new chapters
-
-10/12/2022 06:00:10 PM
-MangaHere got response
-10/12/2022 06:00:10 PM
-No new chapters
-
-10/12/2022 06:00:40 PM
-MangaHere got response
-10/12/2022 06:00:40 PM
-No new chapters
-
-10/12/2022 07:00:07 PM
-MangaHere got response
-10/12/2022 07:00:07 PM
-No new chapters
-
-10/12/2022 07:00:41 PM
-MangaHere got response
-10/12/2022 07:00:41 PM
-No new chapters
-
-10/12/2022 08:00:09 PM
-MangaHere got response
-10/12/2022 08:00:09 PM
-No new chapters
-
-10/12/2022 08:00:24 PM
-MangaHere got response
-10/12/2022 08:00:24 PM
-No new chapters
-
-10/12/2022 09:00:11 PM
-MangaHere got response
-10/12/2022 09:00:11 PM
-No new chapters
-
-10/12/2022 09:00:11 PM
-MangaHere got response
-10/12/2022 09:00:11 PM
-No new chapters
-
-10/12/2022 10:00:13 PM
-MangaHere got response
-10/12/2022 10:00:13 PM
-No new chapters
-
-10/12/2022 10:00:19 PM
-MangaHere got response
-10/12/2022 10:00:19 PM
-No new chapters
-
-10/12/2022 11:00:16 PM
-MangaHere got response
-10/12/2022 11:00:16 PM
-No new chapters
-
-10/12/2022 11:00:25 PM
-MangaHere got response
-10/12/2022 11:00:25 PM
-No new chapters
-
-10/13/2022 12:00:26 AM
-MangaHere got response
-10/13/2022 12:00:26 AM
-No new chapters
-
-10/13/2022 12:00:36 AM
-MangaHere got response
-10/13/2022 12:00:36 AM
-No new chapters
-
-10/13/2022 01:00:01 AM
-MangaHere got response
-10/13/2022 01:00:01 AM
-No new chapters
-
-10/13/2022 01:00:43 AM
-MangaHere got response
-10/13/2022 01:00:43 AM
-No new chapters
-
-10/13/2022 02:00:14 AM
-MangaHere got response
-10/13/2022 02:00:14 AM
-No new chapters
-
-10/13/2022 02:00:25 AM
-MangaHere got response
-10/13/2022 02:00:25 AM
-No new chapters
-
-10/13/2022 03:00:25 AM
-MangaHere got response
-10/13/2022 03:00:25 AM
-No new chapters
-
-10/13/2022 03:01:07 AM
-MangaHere got response
-10/13/2022 03:01:07 AM
-No new chapters
-
-10/13/2022 04:00:03 AM
-MangaHere got response
-10/13/2022 04:00:03 AM
-No new chapters
-
-10/13/2022 04:00:26 AM
-MangaHere got response
-10/13/2022 04:00:26 AM
-No new chapters
-
-10/13/2022 05:00:18 AM
-MangaHere got response
-10/13/2022 05:00:18 AM
-No new chapters
-
-10/13/2022 05:00:49 AM
-MangaHere got response
-10/13/2022 05:00:49 AM
-No new chapters
-
-10/13/2022 06:00:07 AM
-MangaHere got response
-10/13/2022 06:00:07 AM
-No new chapters
-
-10/13/2022 06:00:20 AM
-MangaHere got response
-10/13/2022 06:00:20 AM
-No new chapters
-
-10/13/2022 07:00:14 AM
-MangaHere got response
-10/13/2022 07:00:14 AM
-No new chapters
-
-10/13/2022 07:00:52 AM
-MangaHere got response
-10/13/2022 07:00:52 AM
-No new chapters
-
-10/13/2022 08:00:30 AM
-MangaHere got response
-10/13/2022 08:00:30 AM
-No new chapters
-
-10/13/2022 08:00:56 AM
-MangaHere got response
-10/13/2022 08:00:56 AM
-No new chapters
-
-10/13/2022 09:00:05 AM
-MangaHere got response
-10/13/2022 09:00:05 AM
-No new chapters
-
-10/13/2022 09:00:15 AM
-MangaHere got response
-10/13/2022 09:00:15 AM
-No new chapters
-
-10/13/2022 10:00:02 AM
-MangaHere got response
-10/13/2022 10:00:02 AM
-No new chapters
-
-10/13/2022 10:00:11 AM
-MangaHere got response
-10/13/2022 10:00:11 AM
-No new chapters
-
-10/13/2022 11:00:16 AM
-MangaHere got response
-10/13/2022 11:00:16 AM
-No new chapters
-
-10/13/2022 11:00:34 AM
-MangaHere got response
-10/13/2022 11:00:34 AM
-No new chapters
-
-10/13/2022 12:00:01 PM
-MangaHere got response
-10/13/2022 12:00:01 PM
-No new chapters
-
-10/13/2022 12:00:25 PM
-MangaHere got response
-10/13/2022 12:00:25 PM
-No new chapters
-
-10/13/2022 01:00:08 PM
-MangaHere got response
-10/13/2022 01:00:08 PM
-No new chapters
-
-10/13/2022 01:00:50 PM
-MangaHere got response
-10/13/2022 01:00:50 PM
-No new chapters
-
-10/13/2022 02:00:33 PM
-MangaHere got response
-10/13/2022 02:00:33 PM
-No new chapters
-
-10/13/2022 02:00:39 PM
-MangaHere got response
-10/13/2022 02:00:39 PM
-No new chapters
-
-10/13/2022 03:00:01 PM
-MangaHere got response
-10/13/2022 03:00:01 PM
-No new chapters
-
-10/13/2022 03:00:21 PM
-MangaHere got response
-10/13/2022 03:00:21 PM
-No new chapters
-
-10/13/2022 04:00:06 PM
-MangaHere got response
-10/13/2022 04:00:06 PM
-No new chapters
-
-10/13/2022 04:01:05 PM
-MangaHere got response
-10/13/2022 04:01:05 PM
-No new chapters
-
-10/13/2022 05:00:17 PM
-MangaHere got response
-10/13/2022 05:00:17 PM
-No new chapters
-
-10/13/2022 05:00:25 PM
-MangaHere got response
-10/13/2022 05:00:25 PM
-No new chapters
-
-10/13/2022 06:00:12 PM
-MangaHere got response
-10/13/2022 06:00:12 PM
-No new chapters
-
-10/13/2022 06:00:20 PM
-MangaHere got response
-10/13/2022 06:00:20 PM
-No new chapters
-
-10/13/2022 07:00:00 PM
-MangaHere got response
-10/13/2022 07:00:00 PM
-No new chapters
-
-10/13/2022 07:00:38 PM
-MangaHere got response
-10/13/2022 07:00:38 PM
-No new chapters
-
-10/13/2022 08:00:13 PM
-MangaHere got response
-10/13/2022 08:00:13 PM
-No new chapters
-
-10/13/2022 08:00:53 PM
-MangaHere got response
-10/13/2022 08:00:53 PM
-No new chapters
-
-10/13/2022 09:00:15 PM
-MangaHere got response
-10/13/2022 09:00:15 PM
-No new chapters
-
-10/13/2022 09:00:21 PM
-MangaHere got response
-10/13/2022 09:00:21 PM
-No new chapters
-
-10/13/2022 10:00:14 PM
-MangaHere got response
-10/13/2022 10:00:14 PM
-No new chapters
-
-10/13/2022 10:00:29 PM
-MangaHere got response
-10/13/2022 10:00:29 PM
-No new chapters
-
-10/13/2022 11:00:04 PM
-MangaHere got response
-10/13/2022 11:00:04 PM
-No new chapters
-
-10/13/2022 11:00:29 PM
-MangaHere got response
-10/13/2022 11:00:29 PM
-No new chapters
-
-10/14/2022 12:00:17 AM
-MangaHere got response
-10/14/2022 12:00:17 AM
-No new chapters
-
-10/14/2022 12:00:19 AM
-MangaHere got response
-10/14/2022 12:00:19 AM
-No new chapters
-
-10/14/2022 01:00:04 AM
-MangaHere got response
-10/14/2022 01:00:04 AM
-No new chapters
-
-10/14/2022 01:00:32 AM
-MangaHere got response
-10/14/2022 01:00:32 AM
-No new chapters
-
-10/14/2022 02:00:31 AM
-MangaHere got response
-10/14/2022 02:00:31 AM
-No new chapters
-
-10/14/2022 02:00:47 AM
-MangaHere got response
-10/14/2022 02:00:47 AM
-No new chapters
-
-10/14/2022 03:00:19 AM
-MangaHere got response
-10/14/2022 03:00:19 AM
-No new chapters
-
-10/14/2022 03:00:50 AM
-MangaHere got response
-10/14/2022 03:00:50 AM
-No new chapters
-
-10/14/2022 04:00:13 AM
-MangaHere got response
-10/14/2022 04:00:13 AM
-No new chapters
-
-10/14/2022 04:00:14 AM
-MangaHere got response
-10/14/2022 04:00:14 AM
-No new chapters
-
-10/14/2022 05:00:04 AM
-MangaHere got response
-10/14/2022 05:00:04 AM
-No new chapters
-
-10/14/2022 05:00:31 AM
-MangaHere got response
-10/14/2022 05:00:31 AM
-No new chapters
-
-10/14/2022 06:00:04 AM
-MangaHere got response
-10/14/2022 06:00:04 AM
-No new chapters
-
-10/14/2022 06:00:57 AM
-MangaHere got response
-10/14/2022 06:00:57 AM
-No new chapters
-
-10/14/2022 07:00:05 AM
-MangaHere got response
-10/14/2022 07:00:05 AM
-No new chapters
-
-10/14/2022 07:00:24 AM
-MangaHere got response
-10/14/2022 07:00:24 AM
-No new chapters
-
-10/14/2022 08:00:28 AM
-MangaHere got response
-10/14/2022 08:00:28 AM
-No new chapters
-
-10/14/2022 08:00:50 AM
-MangaHere got response
-10/14/2022 08:00:50 AM
-No new chapters
-
-10/14/2022 09:00:00 AM
-MangaHere got response
-10/14/2022 09:00:00 AM
-No new chapters
-
-10/14/2022 09:00:23 AM
-MangaHere got response
-10/14/2022 09:00:23 AM
-No new chapters
-
-10/14/2022 10:00:12 AM
-MangaHere got response
-10/14/2022 10:00:12 AM
-No new chapters
-
-10/14/2022 10:00:35 AM
-MangaHere got response
-10/14/2022 10:00:35 AM
-No new chapters
-
-10/14/2022 11:00:28 AM
-MangaHere got response
-10/14/2022 11:00:28 AM
-No new chapters
-
-10/14/2022 11:00:53 AM
-MangaHere got response
-10/14/2022 11:00:53 AM
-No new chapters
-
-10/14/2022 12:00:01 PM
-MangaHere got response
-10/14/2022 12:00:01 PM
-No new chapters
-
-10/14/2022 12:00:17 PM
-MangaHere got response
-10/14/2022 12:00:17 PM
-No new chapters
-
-10/14/2022 01:00:23 PM
-MangaHere got response
-10/14/2022 01:00:23 PM
-No new chapters
 
 10/14/2022 01:00:49 PM
 MangaHere got response
@@ -2126,3 +1554,244 @@ NISA got response
 Legend of Heroes limited edition is up for preorder
 10/22/2022 09:42:35 AM
 Just started.  Not sending the email. 
+
+10/22/2022 08:09:03 PM
+NISA got response
+10/22/2022 08:09:04 PM
+Legend of Heroes limited edition is up for preorder
+10/22/2022 08:09:04 PM
+Just started.  Not sending the email. 
+
+10/22/2022 08:10:34 PM
+NISA got response
+10/22/2022 08:10:34 PM
+Legend of Heroes limited edition is up for preorder
+10/22/2022 08:10:34 PM
+Just started.  Not sending the email. 
+
+10/22/2022 08:10:55 PM
+NISA got response
+10/22/2022 08:10:55 PM
+Legend of Heroes limited edition is up for preorder
+10/22/2022 08:10:55 PM
+Just started.  Not sending the email. 
+
+10/22/2022 08:11:27 PM
+NISA got response
+10/22/2022 08:11:27 PM
+Legend of Heroes limited edition is up for preorder
+10/22/2022 08:11:27 PM
+Just started.  Not sending the email. 
+
+10/22/2022 08:11:49 PM
+NISA got response
+10/22/2022 08:11:49 PM
+Legend of Heroes limited edition is up for preorder
+10/22/2022 08:11:49 PM
+Just started.  Not sending the email. 
+
+10/22/2022 08:12:50 PM
+NISA got response
+10/22/2022 08:12:50 PM
+Legend of Heroes limited edition is up for preorder
+10/22/2022 08:12:50 PM
+Just started.  Not sending the email. 
+
+10/22/2022 08:22:28 PM
+NISA got response
+10/22/2022 08:22:28 PM
+Legend of Heroes limited edition is up for preorder
+10/22/2022 08:22:28 PM
+Just started.  Not sending the email. 
+
+10/22/2022 08:33:56 PM
+NISA got response
+10/22/2022 08:33:56 PM
+Legend of Heroes limited edition is up for preorder
+10/22/2022 08:33:56 PM
+Just started.  Not sending the email. 
+
+10/22/2022 08:34:44 PM
+NISA got response
+10/22/2022 08:34:44 PM
+Legend of Heroes limited edition is up for preorder
+10/22/2022 08:34:44 PM
+Just started.  Not sending the email. 
+
+10/22/2022 08:35:00 PM
+NISA got response
+10/22/2022 08:35:00 PM
+Legend of Heroes limited edition is up for preorder
+10/22/2022 08:35:00 PM
+Just started.  Not sending the email. 
+
+10/22/2022 08:36:13 PM
+NISA got response
+10/22/2022 08:36:25 PM
+NISA got response
+10/22/2022 08:36:25 PM
+Legend of Heroes limited edition is up for preorder
+10/22/2022 08:36:25 PM
+Just started.  Not sending the email. 
+
+10/22/2022 08:38:43 PM
+NISA got response
+10/22/2022 08:38:43 PM
+Legend of Heroes limited edition is up for preorder
+10/22/2022 08:38:43 PM
+Just started.  Not sending the email. 
+
+10/22/2022 08:38:54 PM
+NISA got response
+10/22/2022 08:38:54 PM
+Legend of Heroes limited edition is up for preorder
+10/22/2022 08:38:56 PM
+New Limited Edition!
+
+10/22/2022 08:39:04 PM
+NISA got response
+10/22/2022 08:39:04 PM
+Legend of Heroes limited edition is up for preorder
+10/22/2022 08:39:04 PM
+New Limited Edition!
+
+10/22/2022 08:39:53 PM
+NISA got response
+10/22/2022 08:39:53 PM
+Legend of Heroes limited edition is up for preorder
+10/22/2022 08:39:53 PM
+Just started.  Not sending the email. 
+
+10/22/2022 08:40:00 PM
+NISA got response
+10/22/2022 08:40:00 PM
+Legend of Heroes limited edition is up for preorder
+10/22/2022 08:40:01 PM
+New Limited Edition!
+
+10/22/2022 08:42:58 PM
+NISA got response
+10/22/2022 08:42:58 PM
+Legend of Heroes limited edition is up for preorder
+10/22/2022 08:42:58 PM
+Just started.  Not sending the email. 
+
+10/22/2022 08:43:05 PM
+NISA got response
+10/22/2022 08:43:05 PM
+Legend of Heroes limited edition is up for preorder
+10/22/2022 08:43:06 PM
+New Limited Edition!
+
+10/22/2022 08:44:19 PM
+NISA got response
+10/22/2022 08:44:19 PM
+Legend of Heroes limited edition is up for preorder
+10/22/2022 08:44:19 PM
+Just started.  Not sending the email. 
+
+10/22/2022 08:44:29 PM
+NISA got response
+10/22/2022 08:44:29 PM
+Legend of Heroes limited edition is up for preorder
+10/22/2022 08:44:30 PM
+New Limited Edition!
+
+10/22/2022 08:50:17 PM
+NISA got response
+10/22/2022 08:50:17 PM
+Legend of Heroes limited edition is up for preorder
+10/22/2022 08:50:17 PM
+Just started.  Not sending the email. 
+
+10/22/2022 08:50:26 PM
+NISA got response
+10/22/2022 08:50:26 PM
+Legend of Heroes limited edition is up for preorder
+10/22/2022 08:50:27 PM
+New Limited Edition!
+
+10/22/2022 08:51:10 PM
+NISA got response
+10/22/2022 08:51:10 PM
+Legend of Heroes limited edition is up for preorder
+10/22/2022 08:51:10 PM
+Just started.  Not sending the email. 
+
+10/22/2022 08:51:16 PM
+NISA got response
+10/22/2022 08:51:16 PM
+Legend of Heroes limited edition is up for preorder
+10/22/2022 08:51:17 PM
+New Limited Edition!
+
+10/22/2022 08:54:01 PM
+NISA got response
+10/22/2022 08:54:01 PM
+Legend of Heroes limited edition is up for preorder
+10/22/2022 08:54:01 PM
+Just started.  Not sending the email. 
+
+10/22/2022 08:54:08 PM
+NISA got response
+10/22/2022 08:54:12 PM
+Legend of Heroes limited edition is up for preorder
+10/22/2022 08:54:13 PM
+New Limited Edition!
+
+10/22/2022 08:57:23 PM
+NISA got response
+10/22/2022 08:57:23 PM
+Legend of Heroes limited edition is up for preorder
+10/22/2022 08:57:23 PM
+Just started.  Not sending the email. 
+
+10/22/2022 08:57:30 PM
+NISA got response
+10/22/2022 08:57:31 PM
+Legend of Heroes limited edition is up for preorder
+10/22/2022 08:57:31 PM
+New Limited Edition!
+
+10/22/2022 08:57:41 PM
+NISA got response
+10/22/2022 08:57:42 PM
+Legend of Heroes limited edition is up for preorder
+10/22/2022 08:57:43 PM
+New Limited Edition!
+
+10/22/2022 08:59:11 PM
+NISA got response
+10/22/2022 08:59:11 PM
+Legend of Heroes limited edition is up for preorder
+10/22/2022 08:59:11 PM
+Just started.  Not sending the email. 
+
+10/22/2022 08:59:18 PM
+NISA got response
+10/22/2022 08:59:18 PM
+No New Info
+
+10/22/2022 09:00:27 PM
+NISA got response
+10/22/2022 09:00:27 PM
+Legend of Heroes limited edition is up for preorder
+10/22/2022 09:00:28 PM
+Just started.  Not sending the email. 
+
+10/22/2022 09:00:34 PM
+NISA got response
+10/22/2022 09:00:34 PM
+No New Info
+
+10/22/2022 09:01:57 PM
+NISA got response
+10/22/2022 09:01:57 PM
+Legend of Heroes limited edition is up for preorder
+10/22/2022 09:01:57 PM
+Just started.  Not sending the email. 
+
+10/22/2022 09:02:07 PM
+NISA got response
+10/22/2022 09:02:07 PM
+No New Info
