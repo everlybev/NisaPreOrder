@@ -389,12 +389,12 @@ def main():
                     logger.close()
                 past = today
                 daycount = daycount + 1
-        better_sleep(secrets.randbelow(7))
+        better_sleep(secrets.randbelow(777))
         clear_out_log_file(logFile, 44444, 4)
         count = count + 1
         #print(count)
 
-        better_sleep(6)
+        better_sleep(666)
         
 if __name__ == '__main__':
     main()
