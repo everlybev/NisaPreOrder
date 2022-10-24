@@ -320,7 +320,10 @@ def NISA(counter, past):
     if counter > 0:
         if sendEmail == 1:
             #print('sending email')
-            email(str(msg))
+            try:
+                email(str(msg)+'\n\n'+string_with_old_stuff_removed)
+            except:
+                email(str(msg))
             logger = open(logFile, 'a')
             now = datetime.now()
             dt_string = now.strftime("%m/%d/%Y %I:%M:%S %p")
