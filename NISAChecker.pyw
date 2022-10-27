@@ -144,7 +144,7 @@ def check_if_relavent(separator, have_or_have_not, TheFileOfConfiguration, bs_re
             #print(i)
             line_no_space = desiredLines[i].split('\n')[0]
             line_no_space = line_no_space.strip()
-            if bs_response.__contains__(line_no_space):
+            if (bs_response.__contains__(line_no_space)) and ((bs_response.__contains__('PS5')) or (bs_response.__contains__('PS4')) or (bs_response.__contains__('Switch'))):
                 logger = open(logFile, 'a')
                 now = datetime.now()
                 dt_string = now.strftime("%m/%d/%Y %I:%M:%S %p")
@@ -253,6 +253,11 @@ def remove_unnecessary_shit(string):
     string = string.replace('  ', '')
     string = string.replace('\n ', '\n')
     string = string.replace('\n\n', '\n')
+    string = string.replace(' \n', '\n')
+    string = string.replace('\n\n', '\n')
+##    print('1------')
+##    print(string)
+##    print('------2')
     return string
                     
 
@@ -310,10 +315,11 @@ def NISA(counter, past):
                         temp_text = temp_text.replace('\n', '')
                     #print(temp_text)
                     string_with_old_stuff_removed = string_with_old_stuff_removed.replace(temp_text, '')
+                    string_with_old_stuff_removed = remove_unnecessary_shit(string_with_old_stuff_removed)
         sep = '`````````````````````````````````````````````````````````````````````````'
-        print('stuff:\n' + string_with_old_stuff_removed)
+        #print('stuff:\n' + string_with_old_stuff_removed)
         sendEmail = check_if_relavent(sep, 'have', TheConfigurationFile, string_with_old_stuff_removed)
-        print('sendEmail = ' + str(sendEmail))
+        #print('sendEmail = ' + str(sendEmail))
         s = bs_response
                     
         #sendEmail = 1 # comment out this line
