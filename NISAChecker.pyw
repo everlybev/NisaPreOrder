@@ -430,7 +430,7 @@ def main():
                 past = today
                 daycount = daycount + 1
         better_sleep(secrets.randbelow(777))
-        clear_out_log_file(logFile, 44444, 4)
+        clear_out_log_file(logFile, 4444444, 4)
         count = count + 1
         #print(count)
 
