@@ -15,6 +15,32 @@ TheConfigurationFile = 'F:\\Users\\dudeo\\AppData\\Local\\Programs\\Python\\Pyth
 logFile = 'NISA.txt'
 configTXT = 'F:\\Users\\dudeo\\AppData\\Local\\Programs\\Python\\Python39\\dist\\Config.txt'
 
+def write(log, text, datetime_option):
+    if datetime_option:
+        logger = open(log, 'w')
+        now = datetime.now()
+        dt_string = now.strftime("%m/%d/%Y %I:%M:%S %p")
+        logger.write(dt_string + '\n')
+        logger.write(text + '\n')
+        logger.close()
+    else:
+        logger = open(log, 'w')
+        logger.write(text + '\n')
+        logger.close()
+
+def append():
+    if datetime_option:
+        logger = open(log, 'a')
+        now = datetime.now()
+        dt_string = now.strftime("%m/%d/%Y %I:%M:%S %p")
+        logger.write(dt_string + '\n')
+        logger.write(text + '\n')
+        logger.close()
+    else:
+        logger = open(log, 'a')
+        logger.write(text + '\n')
+        logger.close()
+        
 def better_sleep(time2wait):
     start = time.time()
     while((time.time()-start)<time2wait-.00042):
@@ -144,6 +170,9 @@ def check_if_relavent(separator, have_or_have_not, TheFileOfConfiguration, bs_re
             #print(i)
             line_no_space = desiredLines[i].split('\n')[0]
             line_no_space = line_no_space.strip()
+##            print('1****')
+##            print(line_no_space)
+##            print('1****1')
             if (bs_response.__contains__(line_no_space)) and ((bs_response.__contains__('PS5')) or (bs_response.__contains__('PS4')) or (bs_response.__contains__('Switch'))):
                 logger = open(logFile, 'a')
                 now = datetime.now()
@@ -170,8 +199,8 @@ def check_if_relavent(separator, have_or_have_not, TheFileOfConfiguration, bs_re
 def clear_out_log_file(file_that_logs_info, maximum_size_in_bytes, divisor_number):
     text_file_size = os.path.getsize(file_that_logs_info)
     if text_file_size > maximum_size_in_bytes:
-        print('too big')
-        print(text_file_size)
+##        print('too big')
+##        print(text_file_size)
         logger_lines = []
         #read lines first
         logger = open(file_that_logs_info, 'r')
@@ -242,14 +271,14 @@ def remove_unnecessary_shit(string):
             string = string.replace(month_comma, '')
         except:
             pass
-    string = string.replace('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n', '')
-    string = string.replace('\n\n\n', '')
-    string = string.replace('\n\n', '')
+    string = string.replace('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n', '\n')
+    string = string.replace('\n\n\n', '\n')
+    string = string.replace('\n\n', '\n')
     string = string.replace('         ', '')
     string = string.replace('		', '')
     string = string.replace('  ', '')
-    string = string.replace('\n\n\n', '')
-    string = string.replace('\n\n', '')
+    string = string.replace('\n\n\n', '\n')
+    string = string.replace('\n\n', '\n')
     string = string.replace('  ', '')
     string = string.replace('\n ', '\n')
     string = string.replace('\n\n', '\n')
@@ -313,7 +342,9 @@ def NISA(counter, past):
                     temp_text = str(s_array[title_index]).replace('\n ', '')
                     if temp_text[len(temp_text)-1] == '\n':
                         temp_text = temp_text.replace('\n', '')
-                    #print(temp_text)
+##                    print('..')
+##                    print(temp_text)
+##                    print('..')
                     string_with_old_stuff_removed = string_with_old_stuff_removed.replace(temp_text, '')
                     string_with_old_stuff_removed = remove_unnecessary_shit(string_with_old_stuff_removed)
         sep = '`````````````````````````````````````````````````````````````````````````'
@@ -327,7 +358,7 @@ def NISA(counter, past):
         if sendEmail == 1:
             #print('sending email')
             try:
-                email(str(msg)+'\n\n'+string_with_old_stuff_removed)
+                email(str(msg)+'\n\n'+string_with_old_stuff_removed+'\n\n'+str(s))
             except:
                 email(str(msg))
             logger = open(logFile, 'a')
