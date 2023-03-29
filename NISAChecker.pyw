@@ -13,7 +13,7 @@ from email.message import EmailMessage
 TheConfigurationFile = 'F:\\Users\\dudeo\\AppData\\Local\\Programs\\Python\\Python39\\dist\\Config.txt'
 
 logFile = 'NISA.txt'
-configTXT = 'F:\\Users\\dudeo\\AppData\\Local\\Programs\\Python\\Python39\\dist\\Config.txt'
+configTXT = TheConfigurationFile
 
 def write(log, text, datetime_option):
     if datetime_option:
@@ -147,6 +147,37 @@ def email(sites):
 ##            logger.write(dt_string + '\n')
 ##            logger.write(str('Failed to send email to ' + str(the_emails[i]) + '!'))
 ##            logger.close()
+
+def get_lines_between_separator(starting_separator, TheConfigFile=configTXT, ending_separator=''):
+    #Opens config file and returns a list of every line betwix the separators
+    starting_separator = str(starting_separator)
+    if ending_separator == '':
+        ending_separator = starting_separator
+    else:
+        ending_separator = str(ending_separator)
+    spot = 0
+    separatorIs = [5, 9]
+    logger = open(TheConfigFile, 'r')
+    desiredLines = logger.readlines()
+    separators = [starting_separator, ending_separator]
+    #print(desiredLines)
+    for i in range(10, len(desiredLines)): #Finds starting and ending lines with relevant info
+        if spot > 1:
+            pass
+        else:
+            if desiredLines[i] == separators[spot]:
+                separatorIs[spot] = i
+                spot = spot + 1
+                if spot == 3:
+                    i = 2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2
+    i = 0
+    stuff_between_separators = []
+    for i in range(separatorIs[0]+1, separatorIs[1]):#Checks through each line between first and second separator
+        #print(i)
+        line_no_space = desiredLines[i].split('\n')[0]
+        line_no_space = str(line_no_space.rstrip())
+        stuff_between_separators.append(line_no_space)
+    return stuff_between_separators
 
 def check_if_relavent(separator, have_or_have_not, TheFileOfConfiguration, bs_response):
     #Check for special temporary key words
@@ -324,6 +355,7 @@ def NISA(counter, past):
     bs_response = str(bs_response)
     bs_response = remove_unnecessary_shit(bs_response)
     #print(bs_response)
+    #s = 6
     if bs_response == s:
         #there was no change to the site
         #print('no change')
@@ -347,10 +379,17 @@ def NISA(counter, past):
 ##                    print('..')
                     string_with_old_stuff_removed = string_with_old_stuff_removed.replace(temp_text, '')
                     string_with_old_stuff_removed = remove_unnecessary_shit(string_with_old_stuff_removed)
+        ignore_games_separator = ';;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;'
+        ignore_games = get_lines_between_separator(ignore_games_separator)#, TheConfigFile=configTXT, ending_separator='')
+        print('ignored games list:\n{}'.format(str(ignore_games)))
+        print('string_with_old_stuff_removed before ignored games list:\n{}'.format(string_with_old_stuff_removed))
+        for game in ignore_games:
+            string_with_old_stuff_removed.replace(game, 'Ignored')
         sep = '`````````````````````````````````````````````````````````````````````````'
         #print('stuff:\n' + string_with_old_stuff_removed)
+        print('string_with_old_stuff_removed after ignored games list:\n{}'.format(string_with_old_stuff_removed))
         sendEmail = check_if_relavent(sep, 'have', TheConfigurationFile, string_with_old_stuff_removed)
-        #print('sendEmail = ' + str(sendEmail))
+        print('sendEmail = ' + str(sendEmail))
         s = bs_response
                     
         #sendEmail = 1 # comment out this line
@@ -429,12 +468,12 @@ def main():
                     logger.close()
                 past = today
                 daycount = daycount + 1
-        better_sleep(secrets.randbelow(777))
+        time.sleep(secrets.randbelow(777))
         clear_out_log_file(logFile, 4444444, 4)
         count = count + 1
         #print(count)
 
-        better_sleep(666)
+        time.sleep(666)
         
 if __name__ == '__main__':
     main()
