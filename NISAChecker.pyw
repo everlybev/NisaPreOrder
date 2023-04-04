@@ -340,8 +340,11 @@ def NISA(counter, past):
     try:
         response = requests.get(the_site)
         site = str(response)
-    except:
+    except Exception as fucked:
+        text = 'Its fucked.  Error is {}'.format(fucked)
+        write(logFile, text, True)
         site = 'Fucked'
+        print('FUCKED')
     if site != "Fucked":
         logger = open(logFile, 'a')
         now = datetime.now()
@@ -468,12 +471,12 @@ def main():
                     logger.close()
                 past = today
                 daycount = daycount + 1
-        time.sleep(secrets.randbelow(777))
+        time.sleep(secrets.randbelow(7))
         clear_out_log_file(logFile, 4444444, 4)
         count = count + 1
         #print(count)
 
-        time.sleep(666)
+        time.sleep(6)
         
 if __name__ == '__main__':
     main()
