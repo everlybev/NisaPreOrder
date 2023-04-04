@@ -471,12 +471,12 @@ def main():
                     logger.close()
                 past = today
                 daycount = daycount + 1
-        time.sleep(secrets.randbelow(7))
+        time.sleep(secrets.randbelow(777))
         clear_out_log_file(logFile, 4444444, 4)
         count = count + 1
         #print(count)
 
-        time.sleep(6)
+        time.sleep(666)
         
 if __name__ == '__main__':
     main()
