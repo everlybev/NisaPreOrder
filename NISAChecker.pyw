@@ -165,8 +165,9 @@ def get_lines_between_separator(starting_separator, TheConfigFile=configTXT, end
         if spot > 1:
             pass
         else:
-            if desiredLines[i] == separators[spot]:
+            if (desiredLines[i] == separators[spot]) or (desiredLines[i]+'\n' == separators[spot]) or (desiredLines[i].__contains__(separators[spot])):
                 separatorIs[spot] = i
+                print(i, desiredLines[i])
                 spot = spot + 1
                 if spot == 3:
                     i = 2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2
@@ -480,11 +481,3 @@ def main():
         
 if __name__ == '__main__':
     main()
-
-
-
-
-
-
-
-
