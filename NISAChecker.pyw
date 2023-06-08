@@ -22,6 +22,7 @@ def write(log, text, datetime_option):
         now = datetime.now()
         dt_string = now.strftime("%m/%d/%Y %I:%M:%S %p")
         logger.write(dt_string + '\n')
+        print(text)
         logger.write(text + '\n')
         logger.close()
     else:
@@ -369,9 +370,16 @@ def NISA(counter, past):
         logger.write(str('NISA got response'))
         logger.close()
     bs_response = BeautifulSoup(response.text, "lxml")
-    bs_response = bs_response.body.main.find(class_='products wrapper grid products-grid').getText()
-    bs_response = str(bs_response)
-    bs_response = remove_unnecessary_shit(bs_response)
+    bs_response = bs_response.body.main
+    if bs_response == None:
+        write(logFile, 'The main response is None', True)
+        NoneResponse = True
+        bs_response = 'None'
+    else:
+        bs_response = bs_response.body.main.find(class_='products wrapper grid products-grid').getText()
+        bs_response = str(bs_response)
+        bs_response = remove_unnecessary_shit(bs_response)
+        NoneResponse = False
     #print(bs_response)
     #s = 6
     if bs_response == s:
@@ -415,17 +423,32 @@ def NISA(counter, past):
     if counter > 0:
         if sendEmail == 1:
             #print('sending email')
-            try:
-                email(str(msg)+'\n\n'+string_with_old_stuff_removed+'\n\n'+str(s))
-            except:
-                email(str(msg))
-            logger = open(logFile, 'a')
-            now = datetime.now()
-            dt_string = now.strftime("%m/%d/%Y %I:%M:%S %p")
-            logger.write('\n')
-            logger.write(dt_string + '\n')
-            logger.write('New Limited Edition!\n')
-            logger.close()
+            if NoneResponse:
+                try:
+                    email('store.nisamerica.com/preorders?product_list_limit=45 seems to be down')
+                except:
+                    email('store.nisamerica.com/preorders?product_list_limit=45 seems to be down')
+                logger = open(logFile, 'a')
+                now = datetime.now()
+                dt_string = now.strftime("%m/%d/%Y %I:%M:%S %p")
+                logger.write('\n')
+                logger.write(dt_string + '\n')
+                logger.write('NISA is down.  Will wait an additional 39.96 minutes\n')
+                print('Will wait an additional 39.96 minutes')
+                logger.close()
+                time.sleep(60*60*.666)
+            else:
+                try:
+                    email(str(msg)+'\n\n'+string_with_old_stuff_removed+'\n\n'+str(s))
+                except:
+                    email(str(msg))
+                logger = open(logFile, 'a')
+                now = datetime.now()
+                dt_string = now.strftime("%m/%d/%Y %I:%M:%S %p")
+                logger.write('\n')
+                logger.write(dt_string + '\n')
+                logger.write('New Limited Edition!\n')
+                logger.close()
         else:
             #print('not sending email')
             logger = open(logFile, 'a')
@@ -487,12 +510,20 @@ def main():
                     logger.close()
                 past = today
                 daycount = daycount + 1
-        time.sleep(secrets.randbelow(777))
+        if count == 0:
+            print('short sleep')
+            time.sleep(secrets.randbelow(7))
+        else:
+            time.sleep(secrets.randbelow(777))
         clear_out_log_file(logFile, 4444444, 4)
+        if count == 0:
+            print('shorter sleep')
+            time.sleep(6)
+        else:
+            time.sleep(666)
         count = count + 1
         #print(count)
 
-        time.sleep(666)
         
 if __name__ == '__main__':
     main()
