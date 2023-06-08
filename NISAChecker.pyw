@@ -14,6 +14,7 @@ TheConfigurationFile = 'F:\\Users\\dudeo\\AppData\\Local\\Programs\\Python\\Pyth
 
 logFile = 'NISA.txt'
 configTXT = TheConfigurationFile
+the_site = 'https://store.nisamerica.com/preorders?product_list_limit=45'
 
 def write(log, text, datetime_option):
     if datetime_option:
@@ -180,6 +181,20 @@ def get_lines_between_separator(starting_separator, TheConfigFile=configTXT, end
         stuff_between_separators.append(line_no_space)
     return stuff_between_separators
 
+def contains_console(string):
+    string_list = string.split('\n')
+    sep = '?????????????????????????????????????????????????????????????????????????'
+    list_of_consoles = get_lines_between_separator(sep, configTXT)
+    new_string = ''
+    for string in string_list:
+        if string.__contains__('Ignored'):
+            pass
+        else:
+            for console in list_of_consoles:
+                if string.__contains__(console):
+                    new_string = new_string + string + '\n'
+    return new_string
+
 def check_if_relavent(separator, have_or_have_not, TheFileOfConfiguration, bs_response):
     #Check for special temporary key words
     spot = 0
@@ -205,7 +220,7 @@ def check_if_relavent(separator, have_or_have_not, TheFileOfConfiguration, bs_re
 ##            print('1****')
 ##            print(line_no_space)
 ##            print('1****1')
-            if (bs_response.__contains__(line_no_space)) and ((bs_response.__contains__('PS5')) or (bs_response.__contains__('PS4')) or (bs_response.__contains__('Switch'))):
+            if (bs_response.__contains__(line_no_space)) and ((bs_response.__contains__('PS5')) or (bs_response.__contains__('(')) or (bs_response.__contains__('Switch'))):
                 logger = open(logFile, 'a')
                 now = datetime.now()
                 dt_string = now.strftime("%m/%d/%Y %I:%M:%S %p")
@@ -334,7 +349,6 @@ def NISA(counter, past):
         split = 0
     #s = 9
     #get the sites from the configuration file
-    the_site = 'https://store.nisamerica.com/preorders?product_list_limit=45'
     print(the_site)
     the_short_site = 'store.nisamerica.com/preorders?product_list_limit=45'
     msg = 'There is a new available limited edition preorder at NISA! Check out ' + the_short_site
@@ -388,7 +402,8 @@ def NISA(counter, past):
         print('ignored games list:\n{}'.format(str(ignore_games)))
         print('string_with_old_stuff_removed before ignored games list:\n{}'.format(string_with_old_stuff_removed))
         for game in ignore_games:
-            string_with_old_stuff_removed.replace(game, 'Ignored')
+            string_with_old_stuff_removed = string_with_old_stuff_removed.replace(game.strip(), 'Ignored')
+        string_with_old_stuff_removed = contains_console(string_with_old_stuff_removed)
         sep = '`````````````````````````````````````````````````````````````````````````'
         #print('stuff:\n' + string_with_old_stuff_removed)
         print('string_with_old_stuff_removed after ignored games list:\n{}'.format(string_with_old_stuff_removed))
@@ -460,9 +475,9 @@ def main():
             else:
                 try:
                     past_soup = NISA(count, past_soup)
-                except:
-                    msg = 'There was a main() error on NISA. Maybe check Nippon Ichi Software America'
-                    email(msg)
+                except Exception as mainerr:
+                    msg = 'There was a main() error on NISA. Maybe check store.nisamerica.com/preorders?product_list_limit=45'
+                    email(msg + '\n' + str(mainerr))
                     logger = open(logFile, 'a')
                     now = datetime.now()
                     dt_string = now.strftime("%m/%d/%Y %I:%M:%S %p")
