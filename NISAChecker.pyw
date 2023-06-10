@@ -30,7 +30,7 @@ def write(log, text, datetime_option):
         logger.write(text + '\n')
         logger.close()
 
-def append(log, text, idk):
+def append(log, text, datetime_option):
     if datetime_option:
         logger = open(log, 'a')
         now = datetime.now()
@@ -372,7 +372,7 @@ def NISA(counter, past):
     bs_response = BeautifulSoup(response.text, "lxml")
     bs_response = bs_response.body.main
     if bs_response == None:
-        write(logFile, 'The main response is None', True)
+        append(logFile, 'The main response is None', True)
         NoneResponse = True
         bs_response = 'None'
     else:
