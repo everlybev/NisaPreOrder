@@ -367,7 +367,7 @@ def NISA(counter, past):
         dt_string = now.strftime("%m/%d/%Y %I:%M:%S %p")
         logger.write('\n')
         logger.write(dt_string + '\n')
-        logger.write(str('NISA got response'))
+        logger.write(str('NISA got response\n'))
         logger.close()
     bs_response = BeautifulSoup(response.text, "lxml")
     bs_response = bs_response.body.main
