@@ -30,7 +30,7 @@ def write(log, text, datetime_option):
         logger.write(text + '\n')
         logger.close()
 
-def append():
+def append(log, text, idk):
     if datetime_option:
         logger = open(log, 'a')
         now = datetime.now()
@@ -358,7 +358,7 @@ def NISA(counter, past):
         site = str(response)
     except Exception as fucked:
         text = 'Its fucked.  Error is {}'.format(fucked)
-        write(logFile, text, True)
+        append(logFile, text, True)
         site = 'Fucked'
         print('FUCKED')
     if site != "Fucked":
