@@ -14,7 +14,8 @@ TheConfigurationFile = 'F:\\Users\\dudeo\\AppData\\Local\\Programs\\Python\\Pyth
 
 logFile = 'NISA.txt'
 configTXT = TheConfigurationFile
-the_site = 'https://store.nisamerica.com/preorders?product_list_limit=45'
+the_site = 'https://store.nisamerica.com/collections/preorder?sort_by=manual&filter.v.availability=1&filter.v.price.gte=&filter.v.price.lte='
+the_short_site = 'store.nisamerica.com/preorders?product_list_limit=45'
 
 def write(log, text, datetime_option):
     if datetime_option:
@@ -190,11 +191,15 @@ def contains_console(string):
     for string in string_list:
         if string.__contains__('Ignored'):
             pass
+        elif string == 'Coming':
+            pass
         else:
-            for console in list_of_consoles:
-                if string.__contains__(console):
-                    new_string = new_string + string + '\n'
+##            for console in list_of_consoles:
+##                if string.__contains__(console):
+##                    new_string = new_string + string + '\n'
+            new_string = new_string + string + '\n'
     return new_string
+    #return string
 
 def check_if_relavent(separator, have_or_have_not, TheFileOfConfiguration, bs_response):
     #Check for special temporary key words
@@ -221,7 +226,7 @@ def check_if_relavent(separator, have_or_have_not, TheFileOfConfiguration, bs_re
 ##            print('1****')
 ##            print(line_no_space)
 ##            print('1****1')
-            if (bs_response.__contains__(line_no_space)) and ((bs_response.__contains__('PS5')) or (bs_response.__contains__('(')) or (bs_response.__contains__('Switch'))):
+            if (bs_response.__contains__(line_no_space)):# and ((bs_response.__contains__('PS5')) or (bs_response.__contains__('(')) or (bs_response.__contains__('Switch'))):
                 logger = open(logFile, 'a')
                 now = datetime.now()
                 dt_string = now.strftime("%m/%d/%Y %I:%M:%S %p")
@@ -262,14 +267,22 @@ def clear_out_log_file(file_that_logs_info, maximum_size_in_bytes, divisor_numbe
         logger.close()
 
 def remove_unnecessary_shit(string):
-    for index_of_character_in_string in range(0, len(string)):
-        try:
-            if string[index_of_character_in_string] == '$':
-                characters = str(string[index_of_character_in_string]) + str(string[index_of_character_in_string+1]) + str(string[index_of_character_in_string+2]) + str(string[index_of_character_in_string+3]) + str(string[index_of_character_in_string+4])+str(string[index_of_character_in_string+5])+str(string[index_of_character_in_string+6])
-                #print(characters)
-                string = string.replace(characters, '')
-        except:
-            pass
+    #print(string)
+    string = string.replace('9 - $', '9 $')
+##    for index_of_character_in_string in range(0, len(string)):
+##        try:
+##            if string[index_of_character_in_string] == '$':
+##                characters = str(string[index_of_character_in_string]) + str(string[index_of_character_in_string+1]) + str(string[index_of_character_in_string+2]) + str(string[index_of_character_in_string+3]) + str(string[index_of_character_in_string+4])+str(string[index_of_character_in_string+5])+str(string[index_of_character_in_string+6])
+##                #print(characters)
+##                string = string.replace(characters, '')
+##        except:
+##            pass
+    for cents in range(0, 100000):
+        dollar = str(format(round(cents / 100, 2), '.2f'))
+        dollar = '$' + dollar
+        if string.__contains__(dollar):
+            #print(dollar)
+            string = string.replace(dollar, '')
     string = string.replace('Compare', '')
     string = string.replace('Add to Cart', '')
     string = string.replace('Summer', '')
@@ -291,6 +304,9 @@ def remove_unnecessary_shit(string):
     string = string.replace('Available', '')
     string = string.replace('Late', '')
     string = string.replace('USD', '')
+    string = string.replace('Sale price', '')
+    string = string.replace('Preorder', '')
+    string = string.replace('View Product', '')
     for i in range(2022, 2097):
         year = str(i)
         try:
@@ -351,7 +367,6 @@ def NISA(counter, past):
     #s = 9
     #get the sites from the configuration file
     print(the_site)
-    the_short_site = 'store.nisamerica.com/preorders?product_list_limit=45'
     msg = 'There is a new available limited edition preorder at NISA! Check out ' + the_short_site
     try:
         response = requests.get(the_site)
@@ -370,17 +385,19 @@ def NISA(counter, past):
         logger.write(str('NISA got response\n'))
         logger.close()
     bs_response = BeautifulSoup(response.text, "lxml")
-    bs_response = bs_response.body.main
+    bs_response = bs_response.body
+    #print(bs_response)
     if bs_response == None:
-        append(logFile, 'The main response is None', True)
+        append(logFile, 'The body response is None', True)
         NoneResponse = True
         bs_response = 'None'
     else:
-        bs_response = bs_response.body.main.find(class_='products wrapper grid products-grid').getText()
+        bs_response = bs_response.find(class_='product-list__inner').getText()
         bs_response = str(bs_response)
         bs_response = remove_unnecessary_shit(bs_response)
         NoneResponse = False
     #print(bs_response)
+    #exit()
     #s = 6
     if bs_response == s:
         #there was no change to the site
