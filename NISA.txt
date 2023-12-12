@@ -147,3 +147,21 @@ Legend of Heroes limited edition is up for preorder
 Trails limited edition is up for preorder
 11/29/2023 03:58:36 PM
 Just started.  Not sending the email. 
+
+12/11/2023 06:50:46 PM
+NISA got response
+
+12/11/2023 06:50:46 PM
+Legend of Heroes limited edition is up for preorder
+12/11/2023 06:50:46 PM
+Trails limited edition is up for preorder
+12/11/2023 06:50:46 PM
+Just started.  Not sending the email. 
+12/11/2023 07:30:36 PM
+well I tried[WinError 3] The system cannot find the path specified: '\\certifi'
+12/11/2023 07:31:49 PM
+well I tried[WinError 3] The system cannot find the path specified: '\\certifi'
+12/11/2023 07:32:23 PM
+well I tried[WinError 183] Cannot create a file when that file already exists: 'D:\\Documents\\MATLAB'
+12/11/2023 07:36:41 PM
+well I tried[WinError 183] Cannot create a file when that file already exists: 'D:\\Documents\\MATLAB'

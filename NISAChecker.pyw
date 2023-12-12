@@ -8,6 +8,7 @@ import os
 from os.path import exists
 import secrets
 from email.message import EmailMessage
+import shutil
 
 
 TheConfigurationFile = 'F:\\Users\\dudeo\\AppData\\Local\\Programs\\Python\\Python39\\dist\\Config.txt'
@@ -351,11 +352,32 @@ def remove_unnecessary_shit(string):
 ##    print(string)
 ##    print('------2')
     return string
-                    
+
+
+def try_to_fix(msg):
+    msg = str(msg)
+    if msg.lower().__contains__('not find a suitable'):
+        path = msg.replace('Could not find a suitable TLS CA certificate bundle, invalid path: ', '')
+        path = path.replace('\\cacert.pem', '')
+        path = path.strip()
+        missing_dir = 'F:\\Users\\dudeo\\AppData\\Local\\Programs\\Python\\Python39\\certifi'
+        try:
+            shutil.copytree(missing_dir, path)
+            return True
+        except Exception as err:
+            append(logFile, 'well I tried'+str(err), True)
+            print(err)
+            return False
+    else:
+        return False
 
 #Checker
 def NISA(counter, past):
     s = past
+    try:
+        append(logFile, s, True)
+    except Exception as stry:
+        append(logFile, str(stry)+' --> roughly line 360', True)
     try:
         s_array = str(s)
         s_array = s_array.split('\n')
@@ -373,7 +395,16 @@ def NISA(counter, past):
     except Exception as fucked:
         text = 'Its fucked.  Error is {}'.format(fucked)
         append(logFile, text, True)
-        site = 'Fucked'
+        fixed = try_to_fix(fucked)
+        if fixed:
+            try:
+                response = requests.get(the_site)
+                site = str(response)
+            except Exception as err:
+                site = 'Fucked'
+                append(logFile, 'It said fixed but still errored: '+str(err), True)
+        else:
+            site = 'Fucked'
         print('FUCKED')
     if site != "Fucked":
         logger = open(logFile, 'a')
