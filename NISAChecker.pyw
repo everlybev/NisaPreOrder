@@ -405,6 +405,7 @@ def NISA(counter, past):
                 append(logFile, 'It said fixed but still errored: '+str(err), True)
         else:
             site = 'Fucked'
+            response = '11037 Fuck me 11037'
         print('FUCKED')
     if site != "Fucked":
         logger = open(logFile, 'a')
@@ -414,8 +415,18 @@ def NISA(counter, past):
         logger.write(dt_string + '\n')
         logger.write(str('NISA got response\n'))
         logger.close()
-    bs_response = BeautifulSoup(response.text, "lxml")
-    bs_response = bs_response.body
+        bs_response = BeautifulSoup(response.text, "lxml")
+        bs_response = bs_response.body
+    else:
+        logger = open(logFile, 'a')
+        now = datetime.now()
+        dt_string = now.strftime("%m/%d/%Y %I:%M:%S %p")
+        logger.write('\n')
+        logger.write(dt_string + '\n')
+        logger.write(str('NISA could not get a response\n'))
+        logger.close()
+        bs_response = None#BeautifulSoup(response.text, "lxml")
+        bs_response = None#bs_response.body
     #print(bs_response)
     if bs_response == None:
         append(logFile, 'The body response is None', True)
